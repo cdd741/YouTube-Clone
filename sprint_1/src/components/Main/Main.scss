@@ -1,0 +1,6 @@
+@use '../../partials/variables' as *;
+@use '../../partials/mixins' as *;
+
+.main__primary-container {
+  @include page-padding;
+}

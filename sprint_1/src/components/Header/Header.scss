@@ -1,0 +1,11 @@
+@use '../../partials/variables' as *;
+@use '../../partials/mixins' as *;
+
+.header {
+  @include page-padding;
+  margin-bottom: 16px;
+
+  &__sub-container {
+    display: flex;
+  }
+}

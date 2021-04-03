@@ -1,0 +1,20 @@
+@use '../../../partials/mixins' as *;
+@use '../../../partials/variables' as *;
+@use '../../../partials/typography' as *;
+
+.info {
+  &__title {
+  }
+
+  &__upload-info {
+    display: flex;
+  }
+
+  &__viewing {
+    display: flex;
+  }
+
+  &__viewing-container {
+    display: flex;
+  }
+}
