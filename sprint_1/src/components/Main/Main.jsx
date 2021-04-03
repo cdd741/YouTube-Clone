@@ -8,7 +8,7 @@ import Playlist from "./Playlist/Playlist";
 
 class Main extends Component {
   state = {
-    videoMeta: videoDetail[1],
+    videoMeta: videoDetail[0],
   };
 
   handleOnClick = (id) => {
