@@ -5,11 +5,15 @@ import Button from "../../../Snippets/Button/Button";
 function CommentFrom({ className }) {
   return (
     <div className={className}>
-      <img src="" alt="" />
-      <form>
-        <label htmlFor="">
+      <img className="comments__profile-picture" src="" alt="" />
+      <form className="comments__input">
+        <label className="comments__label" htmlFor="comment">
           JOIN THE CONVERSATION
-          <textarea type="text" name="comment"></textarea>
+          <textarea
+            className="comments__textarea"
+            type="text"
+            name="comment"
+          ></textarea>
         </label>
         <Button className="comments__button" />
       </form>

@@ -10,10 +10,12 @@ class Header extends Component {
     return (
       <div className="header">
         <Logo className="header__logo" />
-        <SearchBar className="header__search-bar" />
-        <div className="header__sub-container">
-          <Upload />
-          <ProfilePicture className="header__profile-picture" />
+        <div className="header__container">
+          <SearchBar className="header__search-bar" />
+          <div className="header__sub-container">
+            <Upload />
+            <ProfilePicture className="header__profile-picture" />
+          </div>
         </div>
       </div>
     );

@@ -4,10 +4,9 @@ import CommentForm from "./CommentForm/CommentForm";
 import CommentList from "./CommentList/CommentList";
 
 function Comments({ comments }) {
-  let commentListLength = comments.length;
   return (
     <div className="comments">
-      <h3 className="comments__title">{commentListLength} Comments</h3>
+      <h3 className="comments__title">{comments.length} Comments</h3>
       <CommentForm className="comments__form" />
       <CommentList className="comments__list" comments={comments} />
     </div>

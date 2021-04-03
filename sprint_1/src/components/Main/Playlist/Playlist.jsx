@@ -7,8 +7,8 @@ function Playlist({ currentVideoId, handleOnClick }) {
   let playlist = videos.filter((video) => video.id !== currentVideoId);
 
   return (
-    <div className="videolist">
-      <h4 className="videolist__title">NEXT VIDEO</h4>
+    <div className="playlist">
+      <h4 className="playlist__title">NEXT VIDEO</h4>
       {playlist.map((videoMeta) => (
         <PlaylistItem
           videoMeta={videoMeta}

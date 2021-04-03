@@ -1,6 +1,15 @@
+@use '../../../partials/mixins' as *;
+@use '../../../partials/variables' as *;
+@use '../../../partials/typography' as *;
+
 .header__upload {
   height: 48px;
-  width: 100%;
+  width: 240px;
   margin-right: 16px;
   padding: 0;
+
+  @include tablet {
+    width: 83px;
+    margin: 0 24px;
+  }
 }

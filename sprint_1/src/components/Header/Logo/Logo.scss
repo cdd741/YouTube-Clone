@@ -1,9 +1,17 @@
+@use '../../../partials/mixins' as *;
+@use '../../../partials/variables' as *;
+@use '../../../partials/typography' as *;
+
 .header {
   &__logo {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 48px;
+
+    @include tablet {
+      width: 124px;
+    }
   }
 
   &__logo-img {

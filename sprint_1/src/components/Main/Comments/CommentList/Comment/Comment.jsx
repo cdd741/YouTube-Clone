@@ -4,7 +4,7 @@ function Comment({ comment }) {
   let date = new Date(comment.timestamp);
   date = date.toLocaleDateString();
   return (
-    <li className="comment__container" id={comment.id}>
+    <li className="comment" id={comment.id}>
       <img className="comment__item comment__item--left" src="" alt="" />
       <div className="comment__item comment__item--right">
         <div className="comment__title">
