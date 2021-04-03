@@ -4,7 +4,7 @@ import videos from "../../../data/videos.json";
 import PlaylistItem from "./PlaylistItem/PlaylistItem";
 
 function Playlist({ currentVideoId, handleOnClick }) {
-  let playlist = videos.filter((video) => video.id != currentVideoId);
+  let playlist = videos.filter((video) => video.id !== currentVideoId);
 
   return (
     <div className="videolist">
