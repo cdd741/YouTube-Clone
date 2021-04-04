@@ -4,11 +4,8 @@
 
 .playlist-item {
   display: flex;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
   height: 70px;
-
-  &__image-container {
-  }
 
   &__image {
     width: 120px;
@@ -18,7 +15,7 @@
   }
 
   &__info {
-    margin-left: 16px;
+    margin-left: 1rem;
     height: 70px;
   }
 
@@ -28,8 +25,8 @@
     text-overflow: ellipsis;
 
     @include tablet {
-      line-height: 18px;
-      font-size: 14px;
+      line-height: 1.125rem;
+      font-size: 0.875rem;
     }
   }
 

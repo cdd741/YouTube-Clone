@@ -14,11 +14,11 @@
 
   .main__secondary-container {
     &--meta {
-      padding-top: 32px;
-      margin-bottom: 40px;
+      padding-top: 2rem;
+      margin-bottom: 2.5rem;
 
       @include tablet {
-        padding-top: 48px;
+        padding-top: 3rem;
       }
 
       @include desktop {
@@ -27,13 +27,13 @@
         // max-width: 49.44vw;
         width: calc(100% - 348px);
         max-width: calc(100% - 348px);
-        padding-top: 40px;
+        padding-top: 2.5rem;
       }
     }
 
     &--playlist {
       @include desktop {
-        padding-top: 40px;
+        padding-top: 2.5rem;
       }
     }
   }

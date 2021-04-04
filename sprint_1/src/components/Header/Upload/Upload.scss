@@ -3,7 +3,7 @@
 @use '../../../partials/typography' as *;
 
 .header__upload {
-  height: 48px;
+  height: 3rem;
   width: 100%;
   padding: 0;
   margin-right: 16px;
@@ -15,20 +15,20 @@
 
   @include tablet {
     width: 120px;
-    margin: 0 24px;
+    margin: 0 1.5rem;
   }
 
   &--image {
-    margin-right: 16px;
+    margin-right: 1rem;
 
     @include tablet {
-      margin-right: 8px;
+      margin-right: 0.5rem;
     }
   }
 
   &--text {
     font-weight: 400;
     margin: 0;
-    line-height: 14px;
+    line-height: 0.875rem;
   }
 }

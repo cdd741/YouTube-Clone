@@ -7,7 +7,7 @@
     margin: 0;
 
     @include desktop {
-      padding-right: 32px;
+      padding-right: 2rem;
     }
   }
 
@@ -16,17 +16,17 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin: 24px 0;
+      margin: 1.5rem 0;
     }
 
     @include desktop {
-      padding-right: 32px;
+      padding-right: 2rem;
     }
   }
 
   &__upload-info {
     display: flex;
-    margin: 16px 0 32px;
+    margin: 1rem 0 2rem;
 
     @include tablet {
       margin: 0;
@@ -34,7 +34,7 @@
   }
 
   &__channel {
-    margin: 0 8px 0 0;
+    margin: 0 0.5rem 0 0;
     font-weight: 600;
 
     @include tablet {
@@ -48,13 +48,13 @@
     color: $silver;
 
     @include tablet {
-      font-size: 16px;
+      font-size: 1rem;
     }
   }
 
   &__viewing {
     display: flex;
-    margin-bottom: 24px;
+    margin-bottom: 1.5rem;
 
     @include tablet {
       margin: 0;
@@ -66,12 +66,12 @@
     align-items: center;
 
     &--views {
-      margin-right: 24px;
+      margin-right: 1.5rem;
     }
   }
 
   &__icon {
-    margin: 0 8px 0 0;
+    margin: 0 0.5rem 0 0;
   }
 
   &__count {
@@ -79,7 +79,7 @@
     font-weight: 300;
 
     @include tablet {
-      font-size: 16px;
+      font-size: 1rem;
     }
   }
 
@@ -89,20 +89,20 @@
 
   &__description {
     margin: 0;
-    padding-top: 24px;
-    font-size: 12px;
+    padding-top: 1.5rem;
+    font-size: 0.75rem;
 
     @include tablet {
-      padding-top: 40px;
+      padding-top: 2.5rem;
       width: 66vw;
-      font-size: 14px;
+      font-size: 0.875rem;
     }
 
     @include desktop {
       min-width: 528px;
       width: 36.67vw;
       max-width: 36.67vw;
-      padding-right: 32px;
+      padding-right: 2rem;
     }
   }
 }

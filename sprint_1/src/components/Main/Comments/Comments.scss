@@ -3,7 +3,7 @@
 @use '../../../partials/variables' as *;
 
 .comments {
-  margin-top: 40px;
+  margin-top: 2.5rem;
 
   &__title {
     margin: 0;
@@ -11,7 +11,7 @@
   }
 
   &__form {
-    margin-top: 32px;
+    margin-top: 2rem;
   }
 
   &__list {
