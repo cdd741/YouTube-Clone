@@ -8,6 +8,8 @@ const imgList = [
 ];
 
 function CommentList({ getTimePassed, className, comments }) {
+  // before passing the comments array into Comment component
+  // sorting the array by timestemp with the latest post on top
   return (
     <ul className={className}>
       {comments

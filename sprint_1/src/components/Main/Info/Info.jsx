@@ -12,8 +12,7 @@ function Info({
   likes,
   description,
 }) {
-  // let date = new Date(timestamp);
-  // date = date.toLocaleDateString();
+  // getting the dynamic timestemp
   let date = getTimePassed(timestamp);
   return (
     <div className="info">

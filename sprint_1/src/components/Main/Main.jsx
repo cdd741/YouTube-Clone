@@ -20,6 +20,7 @@ const minut = new Unit("minut", 60);
 const second = new Unit("second", 1);
 const timeUnits = [year, month, week, day, hour, minut, second];
 
+// helper function for calculating dynamic timestemp
 function getTimePassed(timeThen) {
   // time now
   let timeNow = new Date().getTime();
@@ -43,10 +44,13 @@ function getTimePassed(timeThen) {
 
 class Main extends Component {
   state = {
+    // current video object
     videoMeta: videoDetail[0],
   };
 
+  // onclick event handling function for playlist
   handleOnClick = (id) => {
+    // setting the selected video into state
     let newVideoMeta = videoDetail.find((video) => video.id === id);
     this.setState({ videoMeta: newVideoMeta });
   };
