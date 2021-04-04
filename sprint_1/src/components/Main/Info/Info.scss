@@ -4,17 +4,79 @@
 
 .info {
   &__title {
+    margin: 0;
+  }
+
+  &__meta {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 24px 0;
+    }
   }
 
   &__upload-info {
     display: flex;
+    margin: 16px 0 32px;
+
+    @include tablet {
+      margin: 0;
+    }
+  }
+
+  &__channel {
+    margin: 0 8px 0 0;
+  }
+
+  &__date {
+    margin: 0;
   }
 
   &__viewing {
     display: flex;
+    margin-bottom: 24px;
+
+    @include tablet {
+      margin: 0;
+    }
   }
 
-  &__viewing-container {
+  &__container {
     display: flex;
+
+    &--views {
+      margin-right: 24px;
+    }
+
+    &--likes {
+    }
+  }
+
+  &__icon {
+    margin: 0 8px 0 0;
+  }
+
+  &__count {
+    margin: 0;
+  }
+
+  &__description-container {
+    border-top: $border;
+  }
+
+  &__description {
+    margin: 0;
+    padding-top: 24px;
+
+    @include tablet {
+      width: 66vw;
+    }
+
+    @include desktop {
+      min-width: 528px;
+      width: 36.67vw;
+      max-width: 36.67vw;
+    }
   }
 }

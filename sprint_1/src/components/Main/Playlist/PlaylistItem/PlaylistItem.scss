@@ -1,0 +1,29 @@
+@use '../../../../partials/mixins' as *;
+@use '../../../../partials/typography' as *;
+@use '../../../../partials/variables' as *;
+
+.playlist-item {
+  display: flex;
+  margin-bottom: 24px;
+
+  &__image-container {
+  }
+
+  &__image {
+    width: 120px;
+    height: 70px;
+    border-radius: 4px;
+  }
+
+  &__info {
+    margin-left: 16px;
+  }
+
+  &__title {
+    margin: 0 0 16px;
+  }
+
+  &__channel {
+    margin: 0;
+  }
+}

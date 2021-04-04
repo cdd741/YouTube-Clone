@@ -9,30 +9,24 @@ function Info({ title, channel, timestamp, views, likes, description }) {
   return (
     <div className="info">
       <h1 className="info__title">{title}</h1>
-      <div className="info__upload-info">
-        <h3>{channel}</h3>
-        <h3>{date}</h3>
-      </div>
-      <div className="info__viewing">
-        <div className="info__viewing-container info__viewing-container--views">
-          <img
-            className="info__viewing-icon"
-            src={viewsIcon}
-            alt="views_icon"
-          />
-          <h4 className="info__viewing-count">{views}</h4>
+      <div className="info__meta">
+        <div className="info__upload-info">
+          <h3 className="info__channel">By {channel}</h3>
+          <h3 className="info__date">{date}</h3>
         </div>
-        <div className="info__viewing-container info__viewing-container--likes">
-          <img
-            className="info__viewing-icon"
-            src={likesIcon}
-            alt="likes_icon"
-          />
-          <h4 className="info__count">{likes}</h4>
+        <div className="info__viewing">
+          <div className="info__container info__container--views">
+            <img className="info__icon" src={viewsIcon} alt="views_icon" />
+            <h4 className="info__count">{views}</h4>
+          </div>
+          <div className="info__container info__container--likes">
+            <img className="info__icon" src={likesIcon} alt="likes_icon" />
+            <h4 className="info__count">{likes}</h4>
+          </div>
         </div>
       </div>
       <div className="info__description-container">
-        <p className="info__description-content">{description}</p>
+        <p className="info__description">{description}</p>
       </div>
     </div>
   );

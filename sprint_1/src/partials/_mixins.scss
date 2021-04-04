@@ -17,10 +17,13 @@
 
   @include tablet {
     padding: 0 $tablet-edge;
+    max-width: 920px;
+    margin: 0 auto;
   }
 
   @include desktop {
     padding: 0 $desktop-edge;
+    max-width: 100%;
   }
 }
 

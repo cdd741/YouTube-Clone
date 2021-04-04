@@ -4,11 +4,11 @@ import "./PlaylistItem.scss";
 function PlaylistItem({ videoMeta, handleOnClick }) {
   return (
     <div className="playlist-item">
-      <div className="playlist-item__image-container">
+      <div className="playlist-item__image-container pointer">
         <img
           className="playlist-item__image"
           src={videoMeta.image}
-          alt="playlist_item_image"
+          alt="playlist_item_image pointer"
           onClick={() => {
             handleOnClick(videoMeta.id);
           }}
@@ -16,7 +16,7 @@ function PlaylistItem({ videoMeta, handleOnClick }) {
       </div>
       <div className="playlist-item__info">
         <h4
-          className="playlist-item__title"
+          className="playlist-item__title pointer"
           onClick={() => {
             handleOnClick(videoMeta.id);
           }}
@@ -24,7 +24,7 @@ function PlaylistItem({ videoMeta, handleOnClick }) {
           {videoMeta.title}
         </h4>
         <h5
-          className="playlist-item__channel"
+          className="playlist-item__channel pointer"
           onClick={() => {
             handleOnClick(videoMeta.id);
           }}

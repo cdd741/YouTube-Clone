@@ -9,13 +9,15 @@ function Playlist({ currentVideoId, handleOnClick }) {
   return (
     <div className="playlist">
       <h4 className="playlist__title">NEXT VIDEO</h4>
-      {playlist.map((videoMeta) => (
-        <PlaylistItem
-          videoMeta={videoMeta}
-          handleOnClick={handleOnClick}
-          key={videoMeta.id}
-        />
-      ))}
+      <div>
+        {playlist.map((videoMeta) => (
+          <PlaylistItem
+            videoMeta={videoMeta}
+            handleOnClick={handleOnClick}
+            key={videoMeta.id}
+          />
+        ))}
+      </div>
     </div>
   );
 }
