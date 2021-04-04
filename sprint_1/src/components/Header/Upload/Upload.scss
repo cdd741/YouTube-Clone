@@ -7,10 +7,14 @@
   width: 100%;
   padding: 0;
   margin-right: 16px;
-  font-family: inherit;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
 
   @include tablet {
-    width: 100px;
+    width: 120px;
     margin: 0 24px;
   }
 
@@ -18,11 +22,13 @@
     margin-right: 16px;
 
     @include tablet {
-      margin: 0;
+      margin-right: 8px;
     }
   }
 
   &--text {
     font-weight: 400;
+    margin: 0;
+    line-height: 14px;
   }
 }

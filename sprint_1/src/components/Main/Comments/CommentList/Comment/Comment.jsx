@@ -1,11 +1,11 @@
 import React from "react";
 import "./Comment.scss";
 
-function Comment({ getTimePassed, comment }) {
+function Comment({ getTimePassed, comment, img }) {
   let timePassed = getTimePassed(comment.timestamp);
   return (
     <li className="comment" id={comment.id}>
-      <img className="comment__item comment__item--left" src="" alt="" />
+      <img className="comment__item comment__item--left" src={img} alt="" />
       <div className="comment__item comment__item--right">
         <div className="comment__title">
           <h4 className="comment__name">{comment.name}</h4>

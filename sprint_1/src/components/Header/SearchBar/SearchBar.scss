@@ -46,10 +46,6 @@
     font-weight: 400;
     font-size: 16px;
 
-    &::placeholder {
-      font-family: inherit;
-    }
-
     &:focus,
     &:active {
       outline: none;

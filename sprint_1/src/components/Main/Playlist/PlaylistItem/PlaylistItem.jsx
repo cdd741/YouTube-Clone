@@ -23,14 +23,14 @@ function PlaylistItem({ videoMeta, handleOnClick }) {
         >
           {videoMeta.title}
         </h4>
-        <h5
+        <h4
           className="playlist-item__channel pointer"
           onClick={() => {
             handleOnClick(videoMeta.id);
           }}
         >
           {videoMeta.channel}
-        </h5>
+        </h4>
       </div>
     </div>
   );

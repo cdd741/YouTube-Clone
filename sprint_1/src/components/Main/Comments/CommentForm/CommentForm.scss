@@ -64,7 +64,7 @@
     font-family: inherit;
     font-size: 15px;
     line-height: 18px;
-    border-color: $mercury;
+    border: 2px solid $mercury;
 
     @include tablet {
       height: 48px;
@@ -93,6 +93,11 @@
 
     @include desktop {
       margin-right: 0;
+    }
+
+    &:focus,
+    &:active {
+      outline: none;
     }
   }
 }

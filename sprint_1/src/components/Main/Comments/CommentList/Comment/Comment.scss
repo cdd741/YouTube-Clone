@@ -8,6 +8,10 @@
   list-style-type: none;
   border-bottom: $border;
 
+  @include desktop {
+    padding-right: 32px;
+  }
+
   &__item {
     &--left {
       border-radius: 50%;
@@ -34,6 +38,8 @@
   &__name {
     margin: 0;
     overflow-wrap: break-word;
+    // font-size: 0.875rem;
+    font-weight: 600;
   }
 
   &__date {
@@ -48,5 +54,6 @@
 
   &__description {
     overflow-wrap: break-word;
+    margin-top: 8px;
   }
 }
