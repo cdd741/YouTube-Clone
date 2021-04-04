@@ -4,9 +4,9 @@ import logo from "../../../assets/images/Logo/Logo-brainflix.svg";
 
 function Logo({ className }) {
   return (
-    <div className={className}>
+    <a className={className} href="../../../../public/index.html">
       <img className="header__logo-img" src={logo} alt="brainflix_logo" />
-    </div>
+    </a>
   );
 }
 

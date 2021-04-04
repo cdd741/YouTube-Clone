@@ -26,6 +26,11 @@
     object-fit: cover;
     object-position: left;
     position: relative;
+    top: 20px;
+
+    @include tablet {
+      top: 0;
+    }
   }
 
   &__input {
