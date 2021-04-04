@@ -4,8 +4,13 @@ import SearchIcon from "./../../../assets/images/Icons/Icon-search.svg";
 
 function SearchBar({ className }) {
   return (
-    <form className={className}>
-      <button className="header__submit-btn" type="submit">
+    <form
+      className={className}
+      onSubmit={(e) => {
+        e.preventDefault();
+      }}
+    >
+      <button className="header__submit-btn pointer" type="submit">
         <img
           className="header__submit-icon"
           src={SearchIcon}

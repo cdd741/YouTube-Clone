@@ -11,7 +11,12 @@ function CommentFrom({ className }) {
         src={MohanMuruge}
         alt="Mohan_Muruge"
       />
-      <form className="comments__input">
+      <form
+        className="comments__input"
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
+      >
         <label className="comments__label" htmlFor="comment">
           <h5 className="comments__label-text">JOIN THE CONVERSATION</h5>
           <textarea
