@@ -25,14 +25,35 @@
     display: flex;
     align-items: center;
     margin-left: 12px;
+
+    &:focus,
+    &:active {
+      outline: none;
+      border: none;
+    }
   }
 
   &__submit-icon {
-    width: 24px;
+    width: 14px;
   }
 
   &__search-input {
+    display: flex;
+    align-items: center;
     border-style: none;
     width: 100%;
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 16px;
+
+    &::placeholder {
+      font-family: inherit;
+    }
+
+    &:focus,
+    &:active {
+      outline: none;
+      border: none;
+    }
   }
 }

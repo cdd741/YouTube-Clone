@@ -13,7 +13,7 @@ function CommentFrom({ className }) {
       />
       <form className="comments__input">
         <label className="comments__label" htmlFor="comment">
-          JOIN THE CONVERSATION
+          <h5 className="comments__label-text">JOIN THE CONVERSATION</h5>
           <textarea
             className="comments__textarea"
             type="text"

@@ -15,7 +15,7 @@ function SearchBar({ className }) {
       <input
         className="header__search-input"
         type="text"
-        placeholder="search"
+        placeholder="Search"
       />
     </form>
   );

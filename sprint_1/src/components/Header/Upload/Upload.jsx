@@ -6,8 +6,12 @@ import UploadIcon from "../../../assets/images/Icons/Icon-upload.svg";
 export default function Upload() {
   let content = (
     <>
-      <img src={UploadIcon} alt="upload_icon" />
-      <h2>UPLOAD</h2>
+      <img
+        className="header__upload--image"
+        src={UploadIcon}
+        alt="upload_icon"
+      />
+      <h3 className="header__upload--text">UPLOAD</h3>
     </>
   );
 

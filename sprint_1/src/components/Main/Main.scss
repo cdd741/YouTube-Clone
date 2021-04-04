@@ -2,21 +2,11 @@
 @use '../../partials/mixins' as *;
 @use '../../partials/typography' as *;
 
-.pointer {
-  cursor: pointer;
-}
-
 .main__primary-container {
   @include page-padding;
 
-  margin-top: 32px;
   display: flex;
   flex-direction: column;
-  // align-items: center;
-
-  @include tablet {
-    margin-top: 48px;
-  }
 
   @include desktop {
     flex-direction: row;
@@ -24,13 +14,26 @@
 
   .main__secondary-container {
     &--meta {
+      padding-top: 32px;
       margin-bottom: 40px;
+
+      @include tablet {
+        padding-top: 48px;
+      }
 
       @include desktop {
         border-right: $border;
-        width: 49.44vw;
-        max-width: 49.44vw;
-        padding-right: 32px;
+        // width: 49.44vw;
+        // max-width: 49.44vw;
+        width: calc(100% - 348px);
+        max-width: calc(100% - 348px);
+        padding-top: 40px;
+      }
+    }
+
+    &--playlist {
+      @include desktop {
+        padding-top: 40px;
       }
     }
   }

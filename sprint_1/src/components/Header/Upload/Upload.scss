@@ -4,13 +4,25 @@
 
 .header__upload {
   height: 48px;
-  // width: 240px;
   width: 100%;
-  margin-right: 16px;
   padding: 0;
+  margin-right: 16px;
+  font-family: inherit;
 
   @include tablet {
-    width: 83px;
+    width: 100px;
     margin: 0 24px;
+  }
+
+  &--image {
+    margin-right: 16px;
+
+    @include tablet {
+      margin: 0;
+    }
+  }
+
+  &--text {
+    font-weight: 400;
   }
 }

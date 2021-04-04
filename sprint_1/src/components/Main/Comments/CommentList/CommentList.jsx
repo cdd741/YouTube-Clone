@@ -2,11 +2,15 @@ import React from "react";
 import "./CommentList.scss";
 import Comment from "./Comment/Comment";
 
-function CommentList({ className, comments }) {
+function CommentList({ getTimePassed, className, comments }) {
   return (
     <ul className={className}>
       {comments.map((comment) => (
-        <Comment comment={comment} key={comment.id} />
+        <Comment
+          getTimePassed={getTimePassed}
+          comment={comment}
+          key={comment.id}
+        />
       ))}
     </ul>
   );

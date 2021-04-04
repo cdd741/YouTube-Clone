@@ -1,5 +1,12 @@
+@use '../../../partials/mixins' as *;
+@use '../../../partials/typography' as *;
+@use '../../../partials/variables' as *;
+
 .comments {
   margin-top: 40px;
+  @include desktop {
+    padding-right: 32px;
+  }
   &__title {
     margin: 0;
   }

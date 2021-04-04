@@ -5,6 +5,10 @@
 .info {
   &__title {
     margin: 0;
+
+    @include desktop {
+      padding-right: 32px;
+    }
   }
 
   &__meta {
@@ -13,6 +17,10 @@
       justify-content: space-between;
       align-items: center;
       margin: 24px 0;
+    }
+
+    @include desktop {
+      padding-right: 32px;
     }
   }
 
@@ -27,10 +35,21 @@
 
   &__channel {
     margin: 0 8px 0 0;
+    font-weight: 600;
+
+    @include tablet {
+      font-size: 16px;
+    }
   }
 
   &__date {
     margin: 0;
+    font-weight: 400;
+    color: $silver;
+
+    @include tablet {
+      font-size: 16px;
+    }
   }
 
   &__viewing {
@@ -44,12 +63,10 @@
 
   &__container {
     display: flex;
+    align-items: center;
 
     &--views {
       margin-right: 24px;
-    }
-
-    &--likes {
     }
   }
 
@@ -59,6 +76,11 @@
 
   &__count {
     margin: 0;
+    font-weight: 300;
+
+    @include tablet {
+      font-size: 16px;
+    }
   }
 
   &__description-container {
@@ -68,15 +90,19 @@
   &__description {
     margin: 0;
     padding-top: 24px;
+    font-size: 12px;
 
     @include tablet {
+      padding-top: 40px;
       width: 66vw;
+      font-size: 14px;
     }
 
     @include desktop {
       min-width: 528px;
       width: 36.67vw;
       max-width: 36.67vw;
+      padding-right: 32px;
     }
   }
 }
