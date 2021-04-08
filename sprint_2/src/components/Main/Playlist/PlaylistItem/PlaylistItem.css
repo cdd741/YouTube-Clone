@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "Acenir Next";
+  src: url("../assets/fonts/Linotype-AvenirNextLTPro-Bold.otf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Acenir Next";
+  src: url("../assets/fonts/Linotype-AvenirNextLTPro-Demi.otf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Acenir Next";
+  src: url("../assets/fonts/Linotype-AvenirNextLTPro-Medium.otf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Acenir Next";
+  src: url("../assets/fonts/Linotype-AvenirNextLTPro-Regular.otf");
+  font-weight: 400;
+}
+.playlist-item {
+  display: flex;
+  margin-bottom: 1.5rem;
+  height: 70px;
+}
+.playlist-item__image {
+  width: 120px;
+  border-radius: 4px;
+  height: 70px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.playlist-item__info {
+  margin-left: 1rem;
+  height: 70px;
+}
+.playlist-item__title {
+  margin: 0 0 10px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+}
+@media screen and (min-width: 768px) {
+  .playlist-item__title {
+    line-height: 1.125rem;
+    font-size: 0.875rem;
+  }
+}
+.playlist-item__channel {
+  margin: 0;
+  font-weight: 400;
+}/*# sourceMappingURL=PlaylistItem.css.map */

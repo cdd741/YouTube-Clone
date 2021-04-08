@@ -1,0 +1,70 @@
+@font-face {
+  font-family: "Acenir Next";
+  src: url("../assets/fonts/Linotype-AvenirNextLTPro-Bold.otf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Acenir Next";
+  src: url("../assets/fonts/Linotype-AvenirNextLTPro-Demi.otf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Acenir Next";
+  src: url("../assets/fonts/Linotype-AvenirNextLTPro-Medium.otf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Acenir Next";
+  src: url("../assets/fonts/Linotype-AvenirNextLTPro-Regular.otf");
+  font-weight: 400;
+}
+.comment {
+  display: flex;
+  margin-top: 1.5rem;
+  list-style-type: none;
+  border-bottom: 2px solid #e1e1e1;
+}
+@media screen and (min-width: 1280px) {
+  .comment {
+    padding-right: 2rem;
+  }
+}
+.comment__item--left {
+  border-radius: 50%;
+  background-color: #e1e1e1;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.comment__item--right {
+  font-size: 0.875rem;
+  margin-left: 1rem;
+  width: 86%;
+}
+.comment__title {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (min-width: 768px) {
+  .comment__title {
+    justify-content: flex-start;
+  }
+}
+.comment__name {
+  margin: 0;
+  overflow-wrap: break-word;
+  font-weight: 600;
+}
+.comment__date {
+  margin: 0;
+  color: #afafaf;
+  font-weight: 400;
+}
+@media screen and (min-width: 768px) {
+  .comment__date {
+    margin-left: 0.5rem;
+  }
+}
+.comment__description {
+  overflow-wrap: break-word;
+  margin-top: 0.5rem;
+}/*# sourceMappingURL=Comment.css.map */

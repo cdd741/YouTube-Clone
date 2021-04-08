@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "Acenir Next";
+  src: url("../assets/fonts/Linotype-AvenirNextLTPro-Bold.otf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Acenir Next";
+  src: url("../assets/fonts/Linotype-AvenirNextLTPro-Demi.otf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Acenir Next";
+  src: url("../assets/fonts/Linotype-AvenirNextLTPro-Medium.otf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Acenir Next";
+  src: url("../assets/fonts/Linotype-AvenirNextLTPro-Regular.otf");
+  font-weight: 400;
+}
+.header__upload {
+  height: 3rem;
+  width: 100%;
+  padding: 0;
+  margin-right: 16px;
+}
+.header__upload:focus, .header__upload:active {
+  outline: none;
+}
+@media screen and (min-width: 768px) {
+  .header__upload {
+    width: 120px;
+    margin: 0 1.5rem;
+  }
+}
+.header__upload--image {
+  margin-right: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .header__upload--image {
+    margin-right: 0.5rem;
+  }
+}
+.header__upload--text {
+  font-weight: 400;
+  margin: 0;
+  line-height: 0.875rem;
+}/*# sourceMappingURL=Upload.css.map */

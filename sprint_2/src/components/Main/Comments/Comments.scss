@@ -1,0 +1,21 @@
+@use '../../../partials/mixins' as *;
+@use '../../../partials/typography' as *;
+@use '../../../partials/variables' as *;
+
+.comments {
+  margin-top: 2.5rem;
+
+  &__title {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  &__form {
+    margin-top: 2rem;
+  }
+
+  &__list {
+    padding-left: 0;
+    margin: 0;
+  }
+}

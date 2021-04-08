@@ -1,0 +1,33 @@
+@use '../../partials/variables' as *;
+@use '../../partials/mixins' as *;
+@use '../../partials/typography' as *;
+
+.header {
+  @include page-padding;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 80px;
+    margin: 0 auto;
+  }
+
+  &__container {
+    width: 100%;
+
+    @include tablet {
+      display: flex;
+      width: fit-content;
+    }
+  }
+
+  &__sub-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

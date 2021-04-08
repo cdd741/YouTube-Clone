@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "Acenir Next";
+  src: url("../assets/fonts/Linotype-AvenirNextLTPro-Bold.otf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Acenir Next";
+  src: url("../assets/fonts/Linotype-AvenirNextLTPro-Demi.otf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Acenir Next";
+  src: url("../assets/fonts/Linotype-AvenirNextLTPro-Medium.otf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Acenir Next";
+  src: url("../assets/fonts/Linotype-AvenirNextLTPro-Regular.otf");
+  font-weight: 400;
+}
+.main__primary-container {
+  padding: 0 5vw;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .main__primary-container {
+    padding: 0 3.125vw;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .main__primary-container {
+    padding: 0 14.0625vw;
+    max-width: 100%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .main__primary-container {
+    flex-direction: row;
+  }
+}
+.main__primary-container .main__secondary-container--meta {
+  padding-top: 2rem;
+  margin-bottom: 2.5rem;
+}
+@media screen and (min-width: 768px) {
+  .main__primary-container .main__secondary-container--meta {
+    padding-top: 3rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .main__primary-container .main__secondary-container--meta {
+    border-right: 2px solid #e1e1e1;
+    width: calc(100% - 348px);
+    max-width: calc(100% - 348px);
+    padding-top: 2.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .main__primary-container .main__secondary-container--playlist {
+    padding-top: 2.5rem;
+  }
+}/*# sourceMappingURL=Main.css.map */
