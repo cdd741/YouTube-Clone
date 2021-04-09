@@ -48,20 +48,19 @@ class Home extends Component {
   state = {
     // current video object
     videoMeta: null,
-    filteredVideo: null,
+    videoList: null,
   };
 
   filterVideo = (videos, currentVideoId) => {
     return videos.filter((video) => video.id !== currentVideoId);
   };
 
-  getVideo = (videoList, currentId) => {
+  getVideo = (currentId) => {
     return axios
       .get(`${url}/videos/${currentId}${api_key}`)
       .then((res) => {
         this.setState({
           videoMeta: res.data,
-          filteredVideo: this.filterVideo(videoList, currentId),
         });
       })
       .catch((err) => {
@@ -69,11 +68,11 @@ class Home extends Component {
       });
   };
 
-  getVideos = (currentId) => {
+  getVideos = () => {
     return axios
       .get(`${url}/videos${api_key}`)
       .then((res) => {
-        this.getVideo(res.data, currentId);
+        this.setState({ videoList: res.data });
       })
       .catch((err) => {
         console.error("Returning ERROR from GET request of /videos", err);
@@ -84,23 +83,35 @@ class Home extends Component {
     let initialId = this.props.match.params.id
       ? this.props.match.params.id
       : "1af0jruup5gu";
-    this.getVideos(initialId);
+    this.getVideos().then(() => {
+      this.getVideo(initialId).catch((err) => {
+        console.error("ERROR from componentDidUpdate", err);
+      });
+    });
+    window.scrollTo(0, 0);
   };
 
+  // return immediately if videoMeta is empty
+  // it's because setState from componentDidMount
+  // is trggering componentDidUpdate, and the function above is not finished yet
+  // or the id has not been changed
   componentDidUpdate = () => {
     let currentId = this.props.match.params.id
       ? this.props.match.params.id
       : "1af0jruup5gu";
-    if (!this.props.match.params.id || currentId === this.state.videoMeta.id) {
+    if (!this.state.videoMeta || currentId === this.state.videoMeta.id) {
       return;
     } else {
-      this.getVideos(currentId);
+      this.getVideo(currentId).catch((err) => {
+        console.error("ERROR from componentDidUpdate", err);
+      });
+      window.scrollTo(0, 0);
     }
   };
 
   render() {
     // set document.title to the current video title
-    // document.title = this.state.videoMeta.title;
+    if (this.state.videoMeta) document.title = this.state.videoMeta.title;
     return (
       this.state.videoMeta && (
         <div className="home">
@@ -125,7 +136,7 @@ class Home extends Component {
               />
             </div>
             <div className="home__secondary-container home__secondary-container--playlist">
-              <Playlist playlist={this.state.filteredVideo} />
+              <Playlist playlist={this.filterVideo(this.state.videoList)} />
             </div>
           </div>
         </div>

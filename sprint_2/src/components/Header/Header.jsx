@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./Header.scss";
 import Button from "../Button/Button";
 import UploadIcon from "../../assets/images/Icons/Icon-upload.svg";
@@ -20,10 +21,10 @@ class Header extends Component {
 
   render() {
     return (
-      <div className="header">
-        <a className="header__logo" href="../../../../public/index.html">
+      <nav className="header">
+        <Link className="header__logo" to="/">
           <img className="header__logo-img" src={logo} alt="brainflix_logo" />
-        </a>
+        </Link>
         <div className="header__container">
           <form
             className="header__search-bar"
@@ -56,7 +57,7 @@ class Header extends Component {
             />
           </div>
         </div>
-      </div>
+      </nav>
     );
   }
 }
