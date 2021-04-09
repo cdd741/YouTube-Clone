@@ -55,16 +55,6 @@ class Home extends Component {
     return videos.filter((video) => video.id !== currentVideoId);
   };
 
-  // onclick event handling function for playlist
-  // handleOnClick = (id, e) => {
-  //   e.preventDefault();
-  //   // setting the selected video into state
-  //   this.setState({
-  //     videoMeta: this.findVideo(id),
-  //     filteredVideo: this.filterVideo(id),
-  //   });
-  // };
-
   getVideo = (videoList, currentId) => {
     return axios
       .get(`${url}/videos/${currentId}${api_key}`)
