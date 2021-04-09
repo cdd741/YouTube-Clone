@@ -1,0 +1,50 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+
+.playlist {
+  max-width: 348px;
+
+  @include desktop {
+    margin-left: 1.5rem;
+  }
+  &__title {
+    margin: 0 0 2.5rem;
+    color: $silver;
+    font-weight: 400;
+  }
+}
+
+.playlist-item {
+  display: flex;
+  margin-bottom: 1.5rem;
+  height: 70px;
+
+  &__image {
+    width: 120px;
+    border-radius: 4px;
+    height: 70px;
+    object-fit: cover;
+  }
+
+  &__info {
+    margin-left: 1rem;
+    height: 70px;
+  }
+
+  &__title {
+    margin: 0 0 10px;
+    font-weight: 600;
+    text-overflow: ellipsis;
+
+    @include tablet {
+      line-height: 1.125rem;
+      font-size: 0.875rem;
+    }
+  }
+
+  &__channel {
+    margin: 0;
+    font-weight: 400;
+  }
+}
