@@ -56,6 +56,16 @@ class Home extends Component {
     return videos.filter((video) => video.id !== currentVideoId);
   };
 
+  // onclick event handling function for playlist
+  // handleOnClick = (id, e) => {
+  //   e.preventDefault();
+  //   // setting the selected video into state
+  //   this.setState({
+  //     videoMeta: this.findVideo(id),
+  //     filteredVideo: this.filterVideo(id),
+  //   });
+  // };
+
   getVideo = (videoList, currentId) => {
     return axios
       .get(`${url}/videos/${currentId}${api_key}`)
@@ -85,29 +95,21 @@ class Home extends Component {
 
   componentDidMount = () => {
     console.log("hello");
-    let initialId = this.props.match
+    let initialId = this.props.match.params.id
       ? this.props.match.params.id
       : "1af0jruup5gu";
-    this.getVideos(initialId).then(() => {
-      console.log(
-        "are you gonna run if i refresh?",
-        this.props.match,
-        this.state
-      );
-    });
+    this.getVideos(initialId);
   };
 
   componentDidUpdate = () => {
-    let currentId = this.props.match
+    let currentId = this.props.match.params.id
       ? this.props.match.params.id
       : "1af0jruup5gu";
     console.log("bitch");
     if (!this.props.match.params.id || currentId === this.state.videoMeta.id) {
       return;
     } else {
-      this.getVideos(currentId).then(() => {
-        this.getVideo(currentId);
-      });
+      this.getVideos(currentId);
     }
   };
 
