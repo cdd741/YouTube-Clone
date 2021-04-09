@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import videoDetail from "../../data/video-details.json";
-import videos from "../../data/videos.json";
+
 import "./Home.scss";
 import Player from "../../components/Player/Player";
 import Info from "../../components/Info/Info";
@@ -70,7 +69,6 @@ class Home extends Component {
     return axios
       .get(`${url}/videos/${currentId}${api_key}`)
       .then((res) => {
-        console.log("in getVideo");
         this.setState({
           videoMeta: res.data,
           filteredVideo: this.filterVideo(videoList, currentId),
@@ -85,7 +83,6 @@ class Home extends Component {
     return axios
       .get(`${url}/videos${api_key}`)
       .then((res) => {
-        console.log("in getVideos");
         this.getVideo(res.data, currentId);
       })
       .catch((err) => {
@@ -94,7 +91,6 @@ class Home extends Component {
   };
 
   componentDidMount = () => {
-    console.log("hello");
     let initialId = this.props.match.params.id
       ? this.props.match.params.id
       : "1af0jruup5gu";
@@ -105,7 +101,6 @@ class Home extends Component {
     let currentId = this.props.match.params.id
       ? this.props.match.params.id
       : "1af0jruup5gu";
-    console.log("bitch");
     if (!this.props.match.params.id || currentId === this.state.videoMeta.id) {
       return;
     } else {
