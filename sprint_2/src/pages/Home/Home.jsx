@@ -6,6 +6,8 @@ import Player from "../../components/Player/Player";
 import Info from "../../components/Info/Info";
 import Comments from "../../components/Comments/Comments";
 import Playlist from "../../components/Playlist/Playlist";
+import { url, api_key } from "../../App";
+import axios from "axios";
 
 function Unit(name, time) {
   this.name = name;
@@ -44,66 +46,103 @@ function getTimePassed(timeThen) {
 }
 
 class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      // current video object
-      videoMeta: this.findVideo("1af0jruup5gu"),
-      filteredVideo: this.filterVideo("1af0jruup5gu"),
-    };
-  }
+  state = {
+    // current video object
+    videoMeta: null,
+    filteredVideo: null,
+  };
 
-  filterVideo = (currentVideoId) => {
+  filterVideo = (videos, currentVideoId) => {
     return videos.filter((video) => video.id !== currentVideoId);
   };
 
-  findVideo = (currentVideoId) => {
-    return videoDetail.find((video) => video.id === currentVideoId);
+  getVideo = (videoList, currentId) => {
+    return axios
+      .get(`${url}/videos/${currentId}${api_key}`)
+      .then((res) => {
+        console.log("in getVideo");
+        this.setState({
+          videoMeta: res.data,
+          filteredVideo: this.filterVideo(videoList, currentId),
+        });
+      })
+      .catch((err) => {
+        console.error("Returning ERROR from GET request of /videos/:id", err);
+      });
   };
 
-  // onclick event handling function for playlist
-  handleOnClick = (id, e) => {
-    e.preventDefault();
-    // setting the selected video into state
-    this.setState({
-      videoMeta: this.findVideo(id),
-      filteredVideo: this.filterVideo(id),
+  getVideos = (currentId) => {
+    return axios
+      .get(`${url}/videos${api_key}`)
+      .then((res) => {
+        console.log("in getVideos");
+        this.getVideo(res.data, currentId);
+      })
+      .catch((err) => {
+        console.error("Returning ERROR from GET request of /videos", err);
+      });
+  };
+
+  componentDidMount = () => {
+    console.log("hello");
+    let initialId = this.props.match
+      ? this.props.match.params.id
+      : "1af0jruup5gu";
+    this.getVideos(initialId).then(() => {
+      console.log(
+        "are you gonna run if i refresh?",
+        this.props.match,
+        this.state
+      );
     });
+  };
+
+  componentDidUpdate = () => {
+    let currentId = this.props.match
+      ? this.props.match.params.id
+      : "1af0jruup5gu";
+    console.log("bitch");
+    if (!this.props.match.params.id || currentId === this.state.videoMeta.id) {
+      return;
+    } else {
+      this.getVideos(currentId).then(() => {
+        this.getVideo(currentId);
+      });
+    }
   };
 
   render() {
     // set document.title to the current video title
-    document.title = this.state.videoMeta.title;
+    // document.title = this.state.videoMeta.title;
     return (
-      <div className="home">
-        <Player
-          video={this.state.videoMeta.video}
-          image={this.state.videoMeta.image}
-        />
-        <div className="home__primary-container">
-          <div className="home__secondary-container home__secondary-container--meta">
-            <Info
-              getTimePassed={getTimePassed}
-              title={this.state.videoMeta.title}
-              channel={this.state.videoMeta.channel}
-              timestamp={this.state.videoMeta.timestamp}
-              views={this.state.videoMeta.views}
-              likes={this.state.videoMeta.likes}
-              description={this.state.videoMeta.description}
-            />
-            <Comments
-              getTimePassed={getTimePassed}
-              comments={this.state.videoMeta.comments}
-            />
-          </div>
-          <div className="home__secondary-container home__secondary-container--playlist">
-            <Playlist
-              playlist={this.state.filteredVideo}
-              handleOnClick={this.handleOnClick}
-            />
+      this.state.videoMeta && (
+        <div className="home">
+          <Player
+            video={this.state.videoMeta.video}
+            image={this.state.videoMeta.image}
+          />
+          <div className="home__primary-container">
+            <div className="home__secondary-container home__secondary-container--meta">
+              <Info
+                getTimePassed={getTimePassed}
+                title={this.state.videoMeta.title}
+                channel={this.state.videoMeta.channel}
+                timestamp={this.state.videoMeta.timestamp}
+                views={this.state.videoMeta.views}
+                likes={this.state.videoMeta.likes}
+                description={this.state.videoMeta.description}
+              />
+              <Comments
+                getTimePassed={getTimePassed}
+                comments={this.state.videoMeta.comments}
+              />
+            </div>
+            <div className="home__secondary-container home__secondary-container--playlist">
+              <Playlist playlist={this.state.filteredVideo} />
+            </div>
           </div>
         </div>
-      </div>
+      )
     );
   }
 }

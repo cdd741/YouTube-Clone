@@ -10,11 +10,17 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route path="/" exect component={Home}></Route>
+          <Route path="/" exact component={Home} />
+          <Route
+            path="/video/:id"
+            render={(routerProps) => <Home {...routerProps} />}
+          />
         </Switch>
       </Router>
     </div>
   );
 }
 
+export const url = "https://project-2-api.herokuapp.com";
+export const api_key = "?api_key=ba88a64d-5269-47da-aa69-dac14769135d";
 export default App;
