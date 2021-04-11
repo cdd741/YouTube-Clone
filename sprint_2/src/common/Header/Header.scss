@@ -57,6 +57,7 @@
     height: 48px;
     margin-bottom: 0.5rem;
     box-sizing: border-box;
+    background-color: $alabaster;
 
     @include tablet {
       width: 248px;
@@ -95,6 +96,16 @@
     &:active {
       outline: none;
       border: none;
+    }
+  }
+
+  &__upload-link {
+    text-decoration: none;
+    width: 100%;
+    margin-right: 16px;
+
+    @include tablet {
+      margin-right: 0;
     }
   }
 

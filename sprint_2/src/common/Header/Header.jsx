@@ -46,10 +46,12 @@ class Header extends Component {
             />
           </form>
           <div className="header__sub-container">
-            <Button
-              className="header__upload"
-              content={this.uploadBtnContent}
-            />
+            <Link to="/upload" className="header__upload-link">
+              <Button
+                className="header__upload"
+                content={this.uploadBtnContent}
+              />
+            </Link>
             <img
               className="header__profile-picture"
               src={MohanMuruge}

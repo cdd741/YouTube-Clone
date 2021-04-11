@@ -1,8 +1,14 @@
 import "./App.scss";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 
 import Header from "./common/Header/Header";
 import Home from "./routes/Home/Home";
+import Upload from "./routes/Upload/Upload";
 
 function App() {
   return (
@@ -14,6 +20,10 @@ function App() {
           <Route
             path="/video/:id"
             render={(routerProps) => <Home {...routerProps} />}
+          />
+          <Route
+            path="/upload"
+            render={(routerProps) => <Upload {...routerProps} />}
           />
         </Switch>
       </Router>
