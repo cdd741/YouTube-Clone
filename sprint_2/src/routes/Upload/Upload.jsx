@@ -16,6 +16,7 @@ function Upload(props) {
     props.history.goBack();
   };
 
+  document.title = "Upload Video";
   return (
     <div className="upload">
       <h1 className="upload__title">Upload Video</h1>
@@ -23,7 +24,11 @@ function Upload(props) {
         <div className="upload__form-container">
           <div className="upload__image-container">
             <h5 className="upload__image-label">VIDEO THUMBNAIL</h5>
-            <img className="upload__image" src={uploadImg} alt="upload image" />
+            <img
+              className="upload__image"
+              src={uploadImg}
+              alt="upload content"
+            />
           </div>
           <div className="upload__form">
             <label
@@ -49,7 +54,6 @@ function Upload(props) {
                 required
                 className="upload__input upload__input--description"
                 placeholder="Add a description of your video"
-                name="description"
                 name="description"
                 id="description"
               ></textarea>
