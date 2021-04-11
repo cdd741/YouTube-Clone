@@ -25,6 +25,7 @@ function App() {
             path="/upload"
             render={(routerProps) => <Upload {...routerProps} />}
           />
+          <Redirect to="/" />
         </Switch>
       </Router>
     </div>
