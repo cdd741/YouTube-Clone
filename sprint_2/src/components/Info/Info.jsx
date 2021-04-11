@@ -2,16 +2,9 @@ import React from "react";
 import "./Info.scss";
 import viewsIcon from "../../assets/images/Icons/Icon-views.svg";
 import likesIcon from "../../assets/images/Icons/Icon-likes.svg";
+import getTimePassed from "../../utils/getTimePassed";
 
-function Info({
-  getTimePassed,
-  title,
-  channel,
-  timestamp,
-  views,
-  likes,
-  description,
-}) {
+function Info({ title, channel, timestamp, views, likes, description }) {
   // getting the dynamic timestemp
   let date = getTimePassed(timestamp);
   return (

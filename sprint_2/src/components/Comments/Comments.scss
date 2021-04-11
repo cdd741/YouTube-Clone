@@ -87,6 +87,7 @@
     font-size: 0.9375rem;
     line-height: 1.125rem;
     border: 2px solid $mercury;
+    transition: 0.3s;
 
     @include tablet {
       height: 3rem;
@@ -115,11 +116,6 @@
 
     @include desktop {
       margin-right: 0;
-    }
-
-    &:focus,
-    &:active {
-      outline: none;
     }
   }
 }
@@ -177,5 +173,23 @@
   &__description {
     overflow-wrap: break-word;
     margin-top: 0.5rem;
+  }
+
+  &__delete-btn {
+    background-color: $white;
+    border-style: none;
+    transition: 0.3s;
+    color: $silver;
+    padding: 0;
+    margin-bottom: 8px;
+
+    &:hover {
+      background-color: $white;
+      color: #d11a2a;
+    }
+
+    &:focus {
+      outline: none;
+    }
   }
 }

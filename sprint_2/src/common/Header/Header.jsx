@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Header.scss";
-import Button from "../Button/Button";
+import Button from "../../components/Button/Button";
 import UploadIcon from "../../assets/images/Icons/Icon-upload.svg";
 import logo from "../../assets/images/Logo/Logo-brainflix.svg";
 import SearchIcon from "./../../assets/images/Icons/Icon-search.svg";

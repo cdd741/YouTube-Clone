@@ -12,4 +12,9 @@
   &:hover {
     background-color: $brainflix-blue-dark;
   }
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
 }
