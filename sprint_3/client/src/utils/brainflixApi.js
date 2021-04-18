@@ -7,6 +7,8 @@ export const videoListGetRequestApi = () => `${url}/videos`;
 
 export const videoMetaGetRequestApi = (videoId) => `${url}/videos/${videoId}`;
 
+export const videoPutRequestApi = (videoId) => `${url}/videos/${videoId}/likes`;
+
 export const videoPostRequestApi = () => `${url}/videos`;
 
 // Comments Api

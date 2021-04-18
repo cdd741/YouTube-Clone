@@ -112,6 +112,8 @@ class Home extends Component {
                 views={this.state.videoMeta.views}
                 likes={this.state.videoMeta.likes}
                 description={this.state.videoMeta.description}
+                handleCommentUpdate={this.handleCommentUpdate}
+                videoID={this.state.videoMeta.id}
               />
               <Comments
                 videoID={this.state.videoMeta.id}
