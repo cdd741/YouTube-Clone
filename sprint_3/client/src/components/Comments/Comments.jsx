@@ -10,14 +10,8 @@ import {
   commentsDeleteRequestUrl,
 } from "../../utils/brainflixApi";
 
-const imgList = [
-  "https://emoji.slack-edge.com/T01N11LCR55/surprised-jon/016aed46b077ef79.png",
-  "https://ca.slack-edge.com/T01N11LCR55-U01N5D1LC1M-ff75f5b78e12-512",
-  "https://ca.slack-edge.com/T01N11LCR55-U01N5D1PV39-8e781d88c7e3-512",
-];
-
-function Comment({ comment, img, videoID, handleCommentUpdate }) {
-  let timePassed = getTimePassed(comment.timestamp);
+function Comments({ videoID, comments, handleCommentUpdate }) {
+  const [commentText, setCommentText] = useState("");
 
   const handleDeleteOnClick = (commentId, e) => {
     e.preventDefault();
@@ -28,33 +22,6 @@ function Comment({ comment, img, videoID, handleCommentUpdate }) {
       );
     handleCommentUpdate();
   };
-
-  return (
-    <li className="comment" id={comment.id}>
-      <img className="comment__item comment__item--left" src={img} alt="" />
-      <div className="comment__item comment__item--right">
-        <div className="comment__title">
-          <h4 className="comment__name">{comment.name}</h4>
-          <h4 className="comment__date">{timePassed}</h4>
-        </div>
-        <p className="comment__description">{comment.comment}</p>
-        <div>
-          <button
-            className="comment__delete-btn"
-            onClick={(e) => {
-              handleDeleteOnClick(comment.id, e);
-            }}
-          >
-            delete
-          </button>
-        </div>
-      </div>
-    </li>
-  );
-}
-
-function Comments({ videoID, comments, handleCommentUpdate }) {
-  const [commentText, setCommentText] = useState("");
 
   const handleOnChange = (e) => {
     setCommentText(e.target.value);
@@ -108,16 +75,35 @@ function Comments({ videoID, comments, handleCommentUpdate }) {
       <ul className="comments__list">
         {comments
           .sort((a, b) => b.timestamp - a.timestamp)
-          .map((comment, idx) => (
-            <Comment
-              getTimePassed={getTimePassed}
-              comment={comment}
-              img={imgList[idx]}
-              key={comment.id}
-              videoID={videoID}
-              handleCommentUpdate={handleCommentUpdate}
-            />
-          ))}
+          .map((comment) => {
+            let timePassed = getTimePassed(comment.timestamp);
+            return (
+              <li className="comment" id={comment.id} key={comment.id}>
+                <img
+                  className="comment__item comment__item--left"
+                  src={comment.img}
+                  alt=""
+                />
+                <div className="comment__item comment__item--right">
+                  <div className="comment__title">
+                    <h4 className="comment__name">{comment.name}</h4>
+                    <h4 className="comment__date">{timePassed}</h4>
+                  </div>
+                  <p className="comment__description">{comment.comment}</p>
+                  <div>
+                    <button
+                      className="comment__delete-btn"
+                      onClick={(e) => {
+                        handleDeleteOnClick(comment.id, e);
+                      }}
+                    >
+                      delete
+                    </button>
+                  </div>
+                </div>
+              </li>
+            );
+          })}
       </ul>
     </div>
   );
