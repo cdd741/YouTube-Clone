@@ -88,14 +88,11 @@ class Upload extends Component {
               content="PUBLISH"
               type="submit"
             />
-            <div className="upload__button-container">
-              <button
-                className="upload__button upload__button--cancel pointer"
-                onClick={this.handleCancelClick}
-              >
-                CANCEL
-              </button>
-            </div>
+            <Button
+              className="upload__button upload__button--cancel"
+              content="CANCEL"
+              onClick={this.handleCancelClick}
+            />
           </div>
         </form>
       </div>

@@ -1,13 +1,13 @@
-@use './styles/partials/mixins' as *;
-@use './styles/partials/typography' as *;
-@use './styles/partials/variables' as *;
+@use './partials/mixins' as *;
+@use './partials/typography' as *;
+@use './partials/variables' as *;
 
 .pointer {
   cursor: pointer;
 }
 
 .app {
-  font-family: "Acenir Next", "Roboto", sans-serif;
+  font-family: "Avenir Next", "Roboto", sans-serif;
   color: $black;
 }
 

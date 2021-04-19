@@ -62,7 +62,9 @@ class Home extends Component {
         this.getVideo(initialId);
       })
       .then(() => {
-        window.scrollTo(0, 0);
+        window.onbeforeunload = function () {
+          window.scrollTo(0, 0);
+        };
       })
       .catch((err) => {
         console.error("ERROR from componentDidUpdate", err);
