@@ -14,11 +14,13 @@ class Upload extends Component {
   handleOnSubmit = (e) => {
     e.preventDefault();
 
+    // submit to the backend using api call
     axios
       .post(videoPostRequestApi(), {
         title: this.state.title,
         description: this.state.description,
       })
+      // set url to home page
       .then(() => {
         alert("Upload completed, going to home page.😊");
         this.props.history.push("/");
@@ -28,9 +30,11 @@ class Upload extends Component {
   handleCancelClick = (e) => {
     e.preventDefault();
     alert("Upload canceled, going back to previous page.😊");
+    // setting url to the previous page
     this.props.history.goBack();
   };
 
+  // event handling for title and description when somehthing changes
   handleOnChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };

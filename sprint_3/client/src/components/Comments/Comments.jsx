@@ -11,8 +11,10 @@ import {
 } from "../../utils/brainflixApi";
 
 function Comments({ videoID, comments, handleCommentUpdate }) {
+  // using react hook in the functional component
   const [commentText, setCommentText] = useState("");
 
+  // handling delete through api call
   const handleDeleteOnClick = (commentId, e) => {
     e.preventDefault();
     axios
@@ -20,10 +22,12 @@ function Comments({ videoID, comments, handleCommentUpdate }) {
       .catch((err) =>
         console.error("ERROR from DELETE request in handleDeleteOnClick", err)
       );
+    // inform parent component to rerender
     handleCommentUpdate();
   };
 
   const handleOnChange = (e) => {
+    // set the commentText state when something changes in the textarea
     setCommentText(e.target.value);
   };
 
@@ -41,7 +45,9 @@ function Comments({ videoID, comments, handleCommentUpdate }) {
       .catch((err) =>
         console.error("ERROR from POST request in handleOnSubmit", err)
       );
+    // inform parent component to rerender
     handleCommentUpdate();
+    // reset textarea
     setCommentText("");
   };
 

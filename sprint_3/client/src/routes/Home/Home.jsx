@@ -17,14 +17,18 @@ class Home extends Component {
     commentsUpdate: false,
   };
 
+  // set state to true when something is changing in the child
+  // component and needs rerender and api call from the parent component
   handleCommentUpdate = () => {
     this.setState({ commentsUpdate: true });
   };
 
+  // filtering videos by current video id
   filterVideo = (currentVideoId) => {
     return this.state.videoList.filter((video) => video.id !== currentVideoId);
   };
 
+  // getting one video from api call with provided id
   getVideo = (currentId) => {
     return axios
       .get(videoMetaGetRequestApi(currentId))
@@ -38,6 +42,7 @@ class Home extends Component {
       });
   };
 
+  // getting the videolist from api call
   getVideos = () => {
     return axios
       .get(videoListGetRequestApi())
@@ -62,6 +67,7 @@ class Home extends Component {
         this.getVideo(initialId);
       })
       .then(() => {
+        // setting scroll to top when refreshing
         window.onbeforeunload = function () {
           window.scrollTo(0, 0);
         };
@@ -90,6 +96,7 @@ class Home extends Component {
     ) {
       this.getVideo(currentId)
         .then(() => {
+          // setting state back to false after rerendering
           if (this.state.commentsUpdate) {
             this.setState({
               commentsUpdate: false,

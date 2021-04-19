@@ -1,12 +1,3 @@
-// comment template
-// {
-//     "name": "Micheal Lyons",
-//     "comment": "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of acconcert I have EVER witnessed.",
-//     "id": "1ab6d9f6-da38-456e-9b09-ab0acd9ce818",
-//     "likes": 0,
-//     "timestamp": 1545162149000
-// }
-
 const express = require("express");
 const { v4: uuidv4 } = require("uuid");
 const fs = require("fs");
