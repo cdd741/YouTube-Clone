@@ -50,11 +50,17 @@ class Home extends Component {
   };
 
   componentDidMount = () => {
-    let initialId = this.props.match.params.id
-      ? this.props.match.params.id
-      : "1af0jruup5gu";
-    this.getVideos()
-      .then(() => this.getVideo(initialId))
+    axios
+      .get(videoListGetRequestApi())
+      .then((res) => {
+        this.setState({ videoList: res.data });
+      })
+      .then(() => {
+        let initialId = this.props.match.params.id
+          ? this.props.match.params.id
+          : this.state.videoList[0].id;
+        this.getVideo(initialId);
+      })
       .then(() => {
         window.scrollTo(0, 0);
       })
@@ -70,7 +76,11 @@ class Home extends Component {
     // or the id has not been changed
     let currentId = this.props.match.params.id
       ? this.props.match.params.id
-      : "1af0jruup5gu";
+      : this.state.videoList[0].id;
+
+    let oldId = this.state.videoMeta
+      ? this.state.videoMeta.id
+      : this.state.videoList[0].id;
 
     if (
       this.state.commentsUpdate ||
@@ -82,8 +92,7 @@ class Home extends Component {
             this.setState({
               commentsUpdate: false,
             });
-          }
-          if (this.state.videoMeta && currentId !== this.state.videoMeta.id) {
+          } else if (this.state.videoMeta && currentId !== oldId) {
             window.scrollTo(0, 0);
           }
         })
